@@ -39,19 +39,22 @@ html {
   color: #fff;
 }
 
-.post-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
 .post-title {
   margin-bottom: 10px;
 }
 
+.post-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .post-image {
-  width: 30%;
+  width: 490px;
+  height: 350px;
   margin-right: 20px;
+  flex-shrink: 0; 
 }
 
 .post-content {
@@ -119,4 +122,44 @@ button:hover {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(156, 255, 167, 1);
   width: 105%;
+}
+
+.home-section{
+  background: rgba(156, 255, 167, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(156, 255, 167, 1);
+  width: 100%;
+  padding: 1%;
+  margin-top: 2%;
+  text-align: center;
+}
+
+.title{
+  color: #F3AA60;
+}
+
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: calc(50% - 4%);
+  margin: 2%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  height: 132px;
+}
+
+.card:hover{
+  transform: scale(1.05);
+}
+
+.card>h1{
+  font-size: 20px;
 }

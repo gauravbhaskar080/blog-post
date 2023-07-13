@@ -41,11 +41,13 @@ app.get("/compose", function (req, res) {
 });
 
 app.post("/compose", function (req, res) {
+  const postDayTitle = req.body.postDayTitle;
   const postTitle = req.body.postTitle;
   const postBody = req.body.postBody;
   const postImageURL = req.body.postImageURL;
 
   const post = new Post({
+    dayTitle: postDayTitle,
     title: postTitle,
     content: postBody,
     imageURL: postImageURL
@@ -68,6 +70,7 @@ app.get("/posts/:postId", function (req, res) {
     .exec()
     .then((post) => {
       res.render("post", {
+        dayTitle: post.dayTitle,
         title: post.title,
         content: post.content,
         imageURL: post.imageURL
