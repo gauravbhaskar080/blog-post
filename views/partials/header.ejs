@@ -28,10 +28,10 @@
           </p>
         </div>
         <ul class="nav navbar-nav navbar-right" id="navbar">
-          <li id="home"><a href="javascript:void(0);" onclick="toggleNavbar()">HOME</a></li>
-          <li id="compose"><a href="javascript:void(0);" onclick="toggleNavbar()">COMPOSE</a></li>
-          <li id="about"><a href="javascript:void(0);" onclick="toggleNavbar()">ABOUT US</a></li>
-          <li id="contact"><a href="javascript:void(0);" onclick="toggleNavbar()">CONTACT US</a></li>
+          <li id="home"><a href="/" onclick="closeNavbar()">HOME</a></li>
+          <li id="compose"><a href="/compose" onclick="closeNavbar()">COMPOSE</a></li>
+          <li id="about"><a href="/about" onclick="closeNavbar()">ABOUT US</a></li>
+          <li id="contact"><a href="/contact" onclick="closeNavbar()">CONTACT US</a></li>
         </ul>
       </div>
     </nav>
@@ -41,9 +41,16 @@
     <script>
       function toggleNavbar() {
         var x = document.getElementById("navbar");
-        if (x.className === "nav navbar-nav navbar-right") {
-          x.className += " responsive";
+        if (x.className === "nav navbar-nav navbar-right responsive") {
+          x.className = "nav navbar-nav navbar-right";
         } else {
+          x.className += " responsive";
+        }
+      }
+      
+      function closeNavbar() {
+        var x = document.getElementById("navbar");
+        if (x.className === "nav navbar-nav navbar-right responsive") {
           x.className = "nav navbar-nav navbar-right";
         }
       }
