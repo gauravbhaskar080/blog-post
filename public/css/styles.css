@@ -347,7 +347,7 @@ button:hover {
 
 .footer-logo > img {
   width: 400px;
-  height: 120px;
+  height: 105px;
   display: inline;
   margin: 2% 10%;
 }
@@ -388,5 +388,5 @@ button:hover {
 }
 
 .made {
-  margin: 0 auto 10px auto;
+  margin: 0 auto 20px auto;
 }
