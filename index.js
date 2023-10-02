@@ -8,11 +8,14 @@ const ejs = require("ejs");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
+const dotenv = require("dotenv");
 
 const homeStartingContent = "Welcome to our Blog! Here, you will find a collection of informative and engaging articles on various topics. Explore our posts to expand your knowledge and stay updated with the latest trends. Happy reading!";
 const aboutContent = "We are passionate about sharing knowledge and insights through our blog. Our team of dedicated writers strives to provide high-quality content on a wide range of topics. Whether you're a curious reader or a fellow enthusiast, we hope you find value and inspiration in our articles.";
 const contactContent = "We would love to hear from you! If you have any questions, suggestions, or simply want to connect with us, feel free to reach out. You can contact us through the form below or via email or phone. We appreciate your feedback and look forward to engaging with our readers!";
 
+
+dotenv.config();
 
 const app = express();
 
@@ -156,6 +159,8 @@ app.post("/contact", async function(req, res) {
   }
 });
 
-app.listen(3000, function () {
-  console.log('Server listening on port 3000');
+const port = process.env.PORT || 3000;
+
+app.listen(port, function () {
+  console.log(`Server listening on port ${port}`);
 });
