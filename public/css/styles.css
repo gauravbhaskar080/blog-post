@@ -390,3 +390,31 @@ button:hover {
 .made {
   margin: 0 auto 20px auto;
 }
+
+.navbar-toggle {
+  display: none;
+}
+
+.navbar.responsive .navbar-nav {
+  display: block;
+}
+
+.navbar.responsive .navbar-nav li {
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.navbar.responsive .navbar-nav li a {
+  display: inline-block;
+}
+
+@media (max-width: 770px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar.responsive {
+    position: relative;
+  }
+}
