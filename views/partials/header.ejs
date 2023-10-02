@@ -12,14 +12,22 @@
     />
 
     <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+
+  <body>
     <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
+          <button class="navbar-toggle" onclick="toggleNavbar()">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <p class="navbar-brand">
             <a href="/"><img src="/blog-logo.png" class="blog-logo" /></a>
           </p>
         </div>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right" id="navbar">
           <li id="home"><a href="/">HOME</a></li>
           <li id="compose"><a href="/compose">COMPOSE</a></li>
           <li id="about"><a href="/about">ABOUT US</a></li>
@@ -28,8 +36,17 @@
       </div>
     </nav>
 
-    <body>
-      <div class="container"></div>
-    </body>
-  </head>
+    <div class="container"></div>
+
+    <script>
+      function toggleNavbar() {
+        var x = document.getElementById("navbar");
+        if (x.className === "nav navbar-nav navbar-right") {
+          x.className += " responsive";
+        } else {
+          x.className = "nav navbar-nav navbar-right";
+        }
+      }
+    </script>
+  </body>
 </html>
