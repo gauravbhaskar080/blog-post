@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>INKWELL</title>
-    <link rel="icon" type="image/x-icon" href="/blog-logo.png">
+    <link rel="icon" type="image/x-icon" href="/blog-logo" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -12,48 +12,36 @@
     />
 
     <link rel="stylesheet" href="/css/styles.css" />
-  </head>
+    <nav class="navbar navbar-default navbar-light purple lighten-4 mb-4">
+      <button
+        class="navbar-toggler toggler-example purple darken-3"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent41"
+        aria-controls="navbarSupportedContent41"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="white-text"><i class="fas fa-bars fa-1x"></i></span>
+      </button>
 
-  <body>
-    <nav class="navbar navbar-default">
-      <div class="container">
+      <div class="container collapse navbar-collapse" id="navbarSupportedContent41">
         <div class="navbar-header">
-          <button class="navbar-toggle" onclick="toggleNavbar()">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <p class="navbar-brand">
             <a href="/"><img src="/blog-logo.png" class="blog-logo" /></a>
           </p>
         </div>
-        <ul class="nav navbar-nav navbar-right" id="navbar">
-          <li id="home"><a href="/" onclick="closeNavbar()">HOME</a></li>
-          <li id="compose"><a href="/compose" onclick="closeNavbar()">COMPOSE</a></li>
-          <li id="about"><a href="/about" onclick="closeNavbar()">ABOUT US</a></li>
-          <li id="contact"><a href="/contact" onclick="closeNavbar()">CONTACT US</a></li>
+        <ul class="nav navbar-nav navbar-right mr-auto">
+          <li id="home" class="nav-item active"><a class="nav-link" href="/">HOME</a></li>
+          <li id="compose" class="nav-item"><a class="nav-link" href="/compose">COMPOSE</a></li>
+          <li id="about" class="nav-item"><a class="nav-link" href="/about">ABOUT US</a></li>
+          <li id="contact" class="nav-item"><a class="nav-link" href="/contact">CONTACT US</a></li>
         </ul>
       </div>
     </nav>
 
-    <div class="container"></div>
-
-    <script>
-      function toggleNavbar() {
-        var x = document.getElementById("navbar");
-        if (x.className === "nav navbar-nav navbar-right responsive") {
-          x.className = "nav navbar-nav navbar-right";
-        } else {
-          x.className += " responsive";
-        }
-      }
-      
-      function closeNavbar() {
-        var x = document.getElementById("navbar");
-        if (x.className === "nav navbar-nav navbar-right responsive") {
-          x.className = "nav navbar-nav navbar-right";
-        }
-      }
-    </script>
-  </body>
+    <body>
+      <div class="container"></div>
+    </body>
+  </head>
 </html>
