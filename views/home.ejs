@@ -6,13 +6,27 @@
 
 <div class="posts-container">
   <% posts.forEach(function(post) { %>
-  <div class="card">
-    <h1 class="title"><%= post.title %></h1>
-    <p>
-      <%= post.content.substring(0, 100) + " ..." %>
-      <a href="/posts/<%= post._id %>">Read More</a>
-    </p>
-  </div>
-  <% }) %> 
+    <div class="card">
+      <div class="upper-body">
+        <a href="/posts/<%= post._id %>">
+          <% if (post.imageURL.includes("http")) { %>
+            <img src="<%= post.imageURL %>" alt="Post Image" />
+          <% } else { %>
+            <img src="data:image/jpeg;base64, <%= post.imageURL %>" alt="Post Image" />
+          <% } %>
+        </a>
+      </div>
+      <div class="lower-body">
+        <h1 class="title"><%= post.title %></h1>
+        <p>
+          <% if (post.content) { %>
+            <%= post.content.substring(0, 100) + " ..." %>
+            <a href="/posts/<%= post._id %>">Read More</a>
+          <% } %>
+        </p>
+      </div>
+    </div>
+  <% }) %>
 </div>
+
 <%- include("partials/footer"); -%>

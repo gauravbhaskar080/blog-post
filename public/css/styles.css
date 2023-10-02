@@ -3,10 +3,24 @@ html {
   position: relative;
 }
 
+.compose-heading {
+  margin-left: 10%;
+}
+
+.blog-logo {
+  width: 100%;
+  height: 50px;
+}
+
+.navbar-header {
+  display: flex;
+}
+
 .container-fluid {
   padding-top: 70px;
   padding-bottom: 70px;
 }
+
 .navbar {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -16,6 +30,7 @@ html {
   font-size: 12px;
   letter-spacing: 5px;
 }
+
 .navbar-nav li a:hover {
   color: #1abc9c !important;
 }
@@ -25,16 +40,13 @@ html {
 }
 
 .footer {
-  position: absolute;
   text-align: center;
-  bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 180px;
   background-color: #1abc9c;
 }
 
 .footer p {
-  margin-top: 25px;
   font-size: 12px;
   color: #fff;
 }
@@ -43,42 +55,61 @@ html {
   margin-bottom: 10px;
 }
 
-.post-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.post-image {
-  width: 490px;
-  height: 350px;
-  margin-right: 20px;
-  flex-shrink: 0; 
-}
-
-.post-content {
-  flex-grow: 1;
-}
-
 .contact-info {
   margin-bottom: 40px;
 }
 
+.contact-page {
+  margin: 0 13%;
+}
+
+.contact-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-form-group {
+  text-align: left;
+}
+
+.contact-form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 2%;
+  box-sizing: border-box;
+}
+
 .contact-form {
-  width: 400px;
-  margin: 10px auto;
-  background: rgba(156, 255, 167, 0);
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: rgba(156, 255, 167, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(156, 255, 167, 1);
-  text-align: center;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin: 1% 10%;
+}
+
+.contact-form-group > input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 2%;
 }
 
 label {
@@ -87,10 +118,8 @@ label {
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 80%;
+.form-group > input {
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -98,6 +127,21 @@ textarea {
 
 .btn {
   margin-bottom: 10%;
+}
+
+.btn-primary {
+  margin-left: 10%;
+}
+
+@media (max-width: 767px) {
+  .contact-form {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .contact-page {
+    margin-left: 5%;
+  }
 }
 
 button {
@@ -114,31 +158,33 @@ button:hover {
 }
 
 .about-section {
-  margin: 5% 0;
+  margin: 5% 10%;
   background: rgba(156, 255, 167, 0);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(156, 255, 167, 1);
-  width: 105%;
+  width: 80%;
 }
 
-.home-section{
+.home-section {
   background: rgba(156, 255, 167, 0);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(156, 255, 167, 1);
-  width: 100%;
+  width: 75%;
   padding: 1%;
   margin-top: 2%;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.title{
-  color: #F3AA60;
+.title {
+  color: #f3aa60;
 }
 
 .posts-container {
@@ -148,18 +194,199 @@ button:hover {
 }
 
 .card {
-  width: calc(50% - 4%);
+  width: calc(38% - 4%);
   margin: 2%;
   border: 1px solid black;
   border-radius: 10px;
-  padding: 10px;
-  height: 132px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
-.card:hover{
+.card:hover {
   transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.card>h1{
+.upper-body {
+  height: 72%;
+}
+
+.upper-body > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.lower-body {
+  margin: 10px;
+}
+
+.lower-body > h1 {
   font-size: 20px;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  margin-bottom: 3%;
+}
+
+.video-container iframe {
+  width: 100%;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  width: 100%;
+  margin-right: 20px;
+}
+
+.post-image {
+  width: 100%;
+}
+
+.post-content {
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .card {
+    width: 100%;
+  }
+
+  .home-section,
+  .about-section {
+    width: 95%;
+    margin: 5% auto;
+  }
+
+  .upper-body > a > img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .navbar-header {
+    justify-content: space-between;
+  }
+
+  .compose-heading {
+    margin-left: 0;
+  }
+
+  .footer-padding,
+  .footer {
+    padding: 0;
+    margin-top: 18%;
+  }
+
+  .footer p {
+    margin-top: 0;
+  }
+  .post-container {
+    display: block;
+  }
+  .image-container {
+    margin-bottom: 4%;
+  }
+}
+
+.post-page {
+  margin: 1% 13%;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 20px 0;
+  width: 10%;
+  text-align: start;
+  margin-left: 25%;
+  overflow: hidden;
+}
+
+.footer ul li {
+  display: block;
+  margin: 0 10px;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer p {
+  margin-top: -20px;
+}
+
+.footer-padding {
+  height: 60px;
+}
+
+.footer-logo {
+  width: 100%;
+  display: flex;
+}
+
+.footer-logo > img {
+  width: 400px;
+  height: 120px;
+  display: inline;
+  margin: 2% 10%;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer ul li {
+  display: block;
+  margin: 0 10px;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 770px) {
+  .footer ul {
+    display: none;
+  }
+
+  .footer-logo img {
+    width: 80%;
+  }
+
+  .footer p {
+    margin-top: 10px;
+  }
+}
+
+.made {
+  margin: 0 auto 10px auto;
 }

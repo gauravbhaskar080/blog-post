@@ -1,12 +1,46 @@
 <%- include("partials/header"); -%>
 
-<h1><%= dayTitle %></h1>
-<h1><%= title %></h1>
-<div class="post-container">
-  <img class="post-image" src="<%= imageURL %>" alt="Post Image">
-  <div class="post-content">
-    <p><%= content %></p>
+<div class="post-page">
+  <h1><%= dayTitle %></h1>
+  <h1><%= title %></h1>
+
+  <div class="video-container">
+    <% if (videoURL.includes("http")) { %>
+    <div class="video-container">
+      <iframe
+        width="1500"
+        height="300"
+        src="<%= videoURL %>"
+        frameborder="0"
+        allowfullscreen
+        autoplay
+      ></iframe>
+    </div>
+    <% } else { %>
+    <div class="video-container">
+      <video width="320" height="240" controls>
+        <source src="data:video/mp4;base64, <%= videoURL %>" type="video/mp4" />
+      </video>
+    </div>
+    <% } %>
+  </div>
+
+  <div class="post-container">
+    <div class="image-container">
+      <% if (imageURL.includes("http")) { %>
+      <img class="post-image" src="<%= imageURL %>" alt="Post Image" />
+      <% } else { %>
+      <img
+        class="post-image"
+        src="data:image/jpeg;base64, <%= imageURL %>"
+        alt="Post Image"
+      />
+      <% } %>
+    </div>
+
+    <div class="post-content">
+      <p><%= content %></p>
+    </div>
   </div>
 </div>
-
 <%- include("partials/footer"); -%>

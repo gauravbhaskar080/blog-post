@@ -1,17 +1,64 @@
 <%- include("partials/header"); -%>
-    <h1>Compose</h1>
-    <form class="" action="/compose" method="post">
-      <div class="form-group">
-        <label>dayTitle</label>
-        <input class="form-control" type="text" name="postDayTitle" >
-        <label>Title</label>
-        <input class="form-control" type="text" name="postTitle" >
-        <label>Image URL</label>
-        <input class="form-control" type="text" name="postImageURL">
-        <label>Post</label>
-        <textarea class="form-control" name="postBody" rows="5" cols="30"></textarea>
-      </div>
-      <button class="btn btn-primary" type="submit" name="button">Publish</button>
-    </form>
+<h1 class="compose-heading">Compose Blog</h1>
+<br />
+<form class="" action="/compose" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label>Day Title</label>
+    <input
+      class="form-control"
+      type="text"
+      name="postDayTitle"
+      placeholder="Enter Day Title"
+    /><br />
+    <label>Title</label>
+    <input
+      class="form-control"
+      type="text"
+      name="postTitle"
+      placeholder="Enter Title"
+    /><br />
+    <label>Image (Max 1MB)</label>
+    <input
+      class="form-control"
+      type="file"
+      name="postImage"
+      accept="image/*"
+    /><br />
 
+    <label>OR Image URL</label>
+    <input
+      class="form-control"
+      type="text"
+      name="postImageURL"
+      placeholder="Enter Image URL"
+    /><br />
+    <!-- Added input for image URL -->
+
+    <label>Video (Max 1MB)</label>
+    <input
+      class="form-control"
+      type="file"
+      name="postVideo"
+      accept="video/*"
+    /><br />
+
+    <label>OR Video URL</label>
+    <input
+      class="form-control"
+      type="text"
+      name="postVideoURL"
+      placeholder="Enter Video URL"
+    /><br />
+    <!-- Added input for video URL -->
+    <label>Description</label>
+    <textarea
+      class="form-control"
+      name="postBody"
+      rows="5"
+      cols="30"
+      placeholder="Enter Description"
+    ></textarea>
+  </div>
+  <button class="btn btn-primary" type="submit" name="button">Publish</button>
+</form>
 <%- include("partials/footer"); -%>
