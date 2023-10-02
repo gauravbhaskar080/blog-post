@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>INKWELL</title>
-    <link rel="icon" type="image/x-icon" href="/blog-logo" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
+<head>
+  <meta charset="utf-8" />
+  <title>INKWELL</title>
+  <link rel="icon" type="image/x-icon" href="/blog-logo" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navItems = document.querySelectorAll(".nav-item");
 
-    <link rel="stylesheet" href="/css/styles.css" />
+      navItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          navItems.forEach((item) => item.classList.remove("active"));
+          this.classList.add("active");
+          localStorage.setItem("activeNavItem", this.id);
+        });
+      });
+
+      const activeNavItem = localStorage.getItem("activeNavItem");
+      if (activeNavItem) {
+        document.getElementById(activeNavItem).classList.add("active");
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div class="navbar">
     <nav class="navbar navbar-default navbar-light purple lighten-4 mb-4">
-      <button
+      
+      <div class="navbar-header">
+        <button
         class="navbar-toggler toggler-example purple darken-3"
         type="button"
         data-toggle="collapse"
@@ -24,24 +44,32 @@
       >
         <span class="white-text"><i class="fas fa-bars fa-1x"></i></span>
       </button>
-
-      <div class="container collapse navbar-collapse" id="navbarSupportedContent41">
-        <div class="navbar-header">
-          <p class="navbar-brand">
-            <a href="/"><img src="/blog-logo.png" class="blog-logo" /></a>
-          </p>
-        </div>
+        <p class="navbar-brand">
+          <a href="/"><img src="/blog-logo.png" class="blog-logo" /></a>
+        </p>
+      </div>
+      <div
+        class="container collapse navbar-collapse"
+        id="navbarSupportedContent41"
+      >
         <ul class="nav navbar-nav navbar-right mr-auto">
-          <li id="home" class="nav-item active"><a class="nav-link" href="/">HOME</a></li>
-          <li id="compose" class="nav-item"><a class="nav-link" href="/compose">COMPOSE</a></li>
-          <li id="about" class="nav-item"><a class="nav-link" href="/about">ABOUT US</a></li>
-          <li id="contact" class="nav-item"><a class="nav-link" href="/contact">CONTACT US</a></li>
+          <li id="home" class="nav-item">
+            <a class="nav-link" href="/">HOME</a>
+          </li>
+          <li id="compose" class="nav-item">
+            <a class="nav-link" href="/compose">COMPOSE</a>
+          </li>
+          <li id="about" class="nav-item">
+            <a class="nav-link" href="/about">ABOUT US</a>
+          </li>
+          <li id="contact" class="nav-item">
+            <a class="nav-link" href="/contact">CONTACT US</a>
+          </li>
         </ul>
       </div>
     </nav>
+  </div>
 
-    <body>
-      <div class="container"></div>
-    </body>
-  </head>
+  <div class="container"></div>
+</body>
 </html>
