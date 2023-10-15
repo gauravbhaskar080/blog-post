@@ -82,7 +82,3 @@ If you'd like to contribute to this project, please follow these steps:
 ## License
 
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code for your own purposes.
-
----
-
-Feel free to replace the placeholders (`yourusername` and `blog-website`) with your actual GitHub username and repository name. Make sure to create a new repository on GitHub and push your local code to that repository.
