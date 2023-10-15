@@ -23,13 +23,16 @@ This project is a simple blog website built using Node.js, Express.js, and Mongo
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/blog-website.git
+   git clone https://github.com/gauravbhaskar080/blog-post.git
    ```
 
 2. **Install dependencies:**
 
    Navigate to the project directory and run:
 
+   ```bash
+   cd blog-post
+   ```
    ```bash
    npm install
    ```
